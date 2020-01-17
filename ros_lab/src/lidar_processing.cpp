@@ -35,6 +35,7 @@ void LidarProcessing::laserScanCallback(const sensor_msgs::LaserScan::ConstPtr& 
     closest_point_pub_.publish(closest_point);
     farthest_point_pub_.publish(farthest_point);
 
+    lidar_msg.header = scan_msg->header;
     lidar_msg.closest_point = closest_point.data;
     lidar_msg.farthest_point = farthest_point.data;
 
