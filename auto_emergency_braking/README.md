@@ -6,8 +6,11 @@ We implement a safety node for the car that will stop the car from collision whi
 The safety node listens to the `\odom` and `\scan` topic to calculate the TTC using the formula,
 
 
+![Alt text](https://github.com/akhibhat/autonomous_racing/raw/master/auto_emergency_braking/ttc.gif)
 
-Here, _r_ is the distance between the two objects and 
+
+
+Here, _r_ is the distance between the two objects which is obtained from the laser scan message. In the denominator,we take the max of 0 and the velocity in the direction of the scan.
 
 ## Parameters
 The `ttc_threshold_` parameter in `safety_node.cpp` needs to be tuned if operating on the actual car. The current value is set for the simulator.
