@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <node pkg="safety_lab" name="safety_node" type="safety_lab_node" output="screen" />
+
+    <include file="$(find f110_simulator)/launch/simulator.launch" />
+
+</launch>
