@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <include file="$(find safety_lab)/launch/aeb.launch"/>
+
+    <node pkg="wall_follow" name="wall_follow" type="wall_follower.py" />
+</launch>
