@@ -15,7 +15,7 @@ class WallFollow:
 
         rospy.init_node("wall_follow_node", anonymous=True)
 
-        self.kp = 3.0
+        self.kp = 5.0
         self.kd = 0.01
         self.ki = 0.0
         self.servo_offset = 0.0
@@ -46,11 +46,13 @@ class WallFollow:
 
         if  abs(alpha) < 0.1745:
             self.velocity = 1.5
+            print(self.velocity)
         elif abs(alpha) > 0.1745 and abs(alpha) < 0.3491:
             self.velocity = 1.0
+            print(self.velocity)
         else:
             self.velocity = 0.5
-            print(alpha)
+            print(self.velocity)
 
         self.pid_control()
 
@@ -107,10 +109,10 @@ class WallFollow:
 
         self.error = -(self.left_d - dt)
 
-        # print(self.error)
-
         return alpha
 
 if __name__ == "__main__":
     wf = WallFollow()
-    rospy.spin()
+
+    while not rospy.is_shutdown():
+        rospy.spin()

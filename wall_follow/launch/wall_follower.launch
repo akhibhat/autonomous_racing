@@ -2,5 +2,5 @@
 <launch>
     <include file="$(find f110_simulator)/launch/simulator.launch"/>
 
-    <node pkg="wall_follow" name="wall_follow" type="wall_follower.py" />
+    <node pkg="wall_follow" name="wall_follow" type="wall_follower.py" output="screen"/>
 </launch>

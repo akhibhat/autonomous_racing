@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-    <include file="$(find safety_lab)/launch/aeb.launch"/>
+    <include file="$(find f110_simulator)/launch/simulator.launch"/>
 
-    <node pkg="wall_follow" name="wall_follow" type="wall_follower.py" />
+    <node pkg="wall_follow" name="wall_safety" type="wall_follow_node" output="screen"/>
+
+    <node pkg="wall_follow" name="wall_follow" type="wall_follower.py" output="screen"/>
 </launch>

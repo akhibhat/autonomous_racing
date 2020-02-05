@@ -1,4 +1,5 @@
 #include <ros/ros.h>
+#include <wall_follow/safety_node.cpp>
 #include <sensor_msgs/LaserScan.h>
 #include <ackermann_msgs/AckermannDriveStamped.h>
 
