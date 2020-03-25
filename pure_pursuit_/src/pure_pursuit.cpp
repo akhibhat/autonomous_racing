@@ -37,7 +37,7 @@ class PurePursuit
             drive_pub_ = nh_.advertise<ackermann_msgs::AckermannDriveStamped>("/nav", 1);
             waypoint_viz_pub_ = nh_.advertise<visualization_msgs::Marker>("waypoint_markers", 100);
             
-            pose_sub_ = nh_.subscribe("/pf/viz/inferred_pose", 1, &PurePursuit::poseCallback, this);
+            pose_sub_ = nh_.subscribe("/gt_pose", 1, &PurePursuit::poseCallback, this);
 
             ROS_INFO("Reading waypoint data...");
             waypoint_data_ = get_data();
