@@ -45,10 +45,10 @@ class WallFollow:
         alpha = self.leftWallFollow(scan_msg)
 
         if  abs(alpha) < 0.1745:
-            self.velocity = 1.5
+            self.velocity = 0.5
             print(self.velocity)
         elif abs(alpha) > 0.1745 and abs(alpha) < 0.3491:
-            self.velocity = 1.0
+            self.velocity = 0.5
             print(self.velocity)
         else:
             self.velocity = 0.5

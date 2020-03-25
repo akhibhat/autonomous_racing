@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+    <include file="$(find f110_simulator)/launch/simulator.launch">
+        <arg name="map" value="$(find pure_pursuit_)/maps/levine3.yaml"/>
+    </include>
+
+    <include file="$(find particle_filter)/launch/localize.launch" />
+
+</launch>
