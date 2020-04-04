@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+    <include file="$(find f110_simulator)/launch/simulator.launch">
+        <arg name="map" value="$(find rrt_star)/maps/levine3.yaml"/>
+    </include>
+
+</launch>
