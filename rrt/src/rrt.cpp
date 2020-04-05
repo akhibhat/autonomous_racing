@@ -604,18 +604,19 @@ bool RRT::checkCollision(Node &nearest_node, Node &new_node)
     double x_increment = (new_node.x - nearest_node.x)/num_pts_collision_;
     double y_increment = (new_node.y - nearest_node.y)/num_pts_collision_;
 
-    double current_x = new_node.x;
-    double current_y = new_node.y;
+    double current_x = nearest_node.x;
+    double current_y = nearest_node.y;
 
     for (int i=0; i<num_pts_collision_; i++)
     {
+        current_x += x_increment;
+        current_y += y_increment;
+
         if (isCollided(current_x, current_y))
         {
             collision = true;
+            return collision;
         }
-
-        current_x += x_increment;
-        current_y += y_increment;
     }
 
     return collision;
